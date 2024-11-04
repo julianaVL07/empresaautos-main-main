@@ -131,7 +131,8 @@ public class reservaViewController {
         ObservableList<Cliente> clientes = FXCollections.observableArrayList(
             new Cliente("Juan Perez", "123456", null),
             new Cliente("Ana Gomez", "66666", null),
-            new Cliente("Laura Lopera", "2345", null)
+            new Cliente("Laura Lopera", "2345", null),
+            new Cliente("Sara Bolaños", "0987", null)
         );
         txtListaClientes.setItems(clientes);
     
@@ -139,7 +140,8 @@ public class reservaViewController {
         ObservableList<Vehiculo> vehiculos = FXCollections.observableArrayList(
             new Moto("ABC123", "Yamaha", "MT-07", 2020, 0, null, TipoCaja.AUTOMATICO),
             new Camioneta("XYZ789", "Toyota", "Hilux", 2021, 1000, null),
-            new Auto ("ABC123", "Chevrolet", "Spar", 2020,4, null)
+            new Auto ("ABC123", "Chevrolet", "Spar", 2022,4, null),
+            new Auto ("HGF675", "chevrolet", "captiva", 2023,6, null)
         );
         txtListaVehiculo.setItems(vehiculos);
     }
