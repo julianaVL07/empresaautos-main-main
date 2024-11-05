@@ -9,6 +9,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+//aplication es la clase base para crear aplicaciones JAVAFX
+//App para inicializar la aplicacion (ventanas)
+
 public class App extends Application {
 
     @Override
@@ -19,7 +22,7 @@ public class App extends Application {
             Scene scene = new Scene(loader.load());
 
             reservaViewController controller = loader.getController();
-            controller.setApp(this); // Inyecta la referencia de App en el controlador
+            controller.setApp(this); // Inyecta la referencia de App en el controlador permitiendo el acceso
 
             primaryStage.setTitle("Sistema de Reservas");
             primaryStage.setScene(scene);

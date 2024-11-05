@@ -25,6 +25,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class reservaViewController {
 
+    //controlador de vista que maneja la interfaz gráfica e interactua con el controlador 
+
     App app;
 
     @FXML
@@ -78,6 +80,7 @@ public class reservaViewController {
         this.controller = new reservaController();
     }
 
+    //metodo que inicializa los componentes de la interfaz grafica
     @FXML
     void initialize() {
     // Asegurarse de que los elementos FXML fueron inyectados correctamente
@@ -146,6 +149,7 @@ public class reservaViewController {
         txtListaVehiculo.setItems(vehiculos);
     }
 
+    //aqui se referencia tambien al reserva controlador
     @FXML
     void crearReservaAction(ActionEvent event) {
         try {

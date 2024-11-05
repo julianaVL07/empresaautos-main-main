@@ -4,6 +4,8 @@ import java.util.LinkedList;
 
 public class Empresa {
 
+    //clase que administra la info de la empresa 
+
     private String nombre;
     private LinkedList <Vehiculo> vehiculos;
     private LinkedList<Cliente> clientes;

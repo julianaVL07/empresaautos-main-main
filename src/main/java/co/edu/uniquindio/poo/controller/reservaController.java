@@ -17,6 +17,8 @@ import javafx.scene.control.ComboBox;
 
 public class reservaController {
 
+    //controlador que maneja las reservas de vehiculos en la aplicacion, maneja tambien el CRUD
+
     private Empresa empresa;
     private ObservableList<Reserva> reservas;
 
@@ -33,31 +35,6 @@ public class reservaController {
     private ComboBox<Cliente> txtListaClientes;
     @FXML
     private ComboBox<Vehiculo> txtListaVehiculo;
-
-    @FXML
-    public void initialize() {
-        // Cargar datos en ComboBox
-        cargarClientes();
-        cargarVehiculos();
-    }
-
-    private void cargarClientes() {
-        // Cargar clientes desde el modelo (puedes tener una lista estática o de otro lugar)
-        ObservableList<Cliente> clientes = FXCollections.observableArrayList();
-        // Suponiendo que tienes algunos clientes
-        clientes.add(new Cliente("123456", "Juan Pérez", null));
-        clientes.add(new Cliente("789101", "Ana Gómez", null));
-        txtListaClientes.setItems(clientes);
-    }
-
-    private void cargarVehiculos() {
-        // Cargar vehículos desde el modelo (puedes tener una lista estática o de otro lugar)
-        ObservableList<Vehiculo> vehiculos = FXCollections.observableArrayList();
-        // Suponiendo que tienes algunos vehículos
-        vehiculos.add(new Moto("ABC123", "Yamaha", "MT-07", 2020, 0, null, TipoCaja.AUTOMATICO));
-        vehiculos.add(new Camioneta("XYZ789", "Toyota", "Hilux", 2021, 1000, null));
-        txtListaVehiculo.setItems(vehiculos);
-    }
 
 
     // Cargar clientes y vehículos (asumiendo que se cargan de forma estática)

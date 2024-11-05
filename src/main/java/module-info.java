@@ -10,3 +10,5 @@ module co.edu.uniquindio.poo {
     exports co.edu.uniquindio.poo.controller;
     exports co.edu.uniquindio.poo.viewController;
 }
+
+//util para estructurar un proyecto JAVAFX de manera mas eficiente 
