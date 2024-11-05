@@ -26,6 +26,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class reservaViewController {
 
     //controlador de vista que maneja la interfaz gráfica e interactua con el controlador 
+    //Elementos de la interfaz grafica 
 
     App app;
 
@@ -98,6 +99,7 @@ public class reservaViewController {
     assert columnCosto != null : "fx:id=\"columnCosto\" was not injected: check your FXML file 'reserva.fxml'.";
     assert btnActualizar != null : "fx:id=\"btnActualizar\" was not injected: check your FXML file 'reserva.fxml'.";
 
+    //Inicializar columnas de la tabla
     columnCliente.setCellValueFactory(new PropertyValueFactory<>("cliente"));
     columnDiasReserva.setCellValueFactory(new PropertyValueFactory<>("diasReserva")); 
     columnVehiculo.setCellValueFactory(new PropertyValueFactory<>("vehiculo"));
@@ -115,7 +117,7 @@ public class reservaViewController {
         }
     });
 
-    // Listener para el ComboBox de vehículos
+    // Listener permite poner el valor del costa total para el ComboBox de vehículos
     txtListaVehiculo.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
     if (newSelection != null) {
         try {
@@ -129,6 +131,7 @@ public class reservaViewController {
 
     }
 
+    //Inicializa listas de clientes y vehiculos para probar los combobox en la interfaz gráfica
     private void cargarDatosEnComboBoxes() {
         // Cargar clientes
         ObservableList<Cliente> clientes = FXCollections.observableArrayList(
@@ -150,6 +153,7 @@ public class reservaViewController {
     }
 
     //aqui se referencia tambien al reserva controlador
+    //Crea una nueva reserva cuando el usuario hace clic en el botón crear reserva
     @FXML
     void crearReservaAction(ActionEvent event) {
         try {
@@ -174,6 +178,8 @@ public class reservaViewController {
         }
     }
 
+
+    //Elimina la reserva seleccionada en la tabla cuando el usuario hace clic en el botón eliminar
     @FXML
     void eliminarAction(ActionEvent event) {
         Reserva reservaSeleccionada = tabReserva.getSelectionModel().getSelectedItem();
@@ -185,6 +191,7 @@ public class reservaViewController {
         }
     }
 
+    //Actualiza la reserva seleccionada en la tabla con los nuevos valores ingresados en los campos.
     @FXML
     void actualizarAction(ActionEvent event) {
     Reserva reservaSeleccionada = tabReserva.getSelectionModel().getSelectedItem();
@@ -229,6 +236,7 @@ public class reservaViewController {
         limpiarCampos();
     }
 
+    //borra todos los campos de entrada, restableciendo los comboBbox y la seleccción en la tabla.
     private void limpiarCampos() {
         txtDiasReserva.clear();
         txtCostoTotal.clear();
@@ -237,6 +245,7 @@ public class reservaViewController {
         tabReserva.getSelectionModel().clearSelection();
     }
 
+    
     private void actualizarTablaReservas() {
         tabReserva.setItems(controller.getReservas()); // Asigna la lista actual a la tabla
         tabReserva.refresh(); // Esto puede ayudar a actualizar la vista

@@ -9,7 +9,7 @@ import co.edu.uniquindio.poo.model.Reserva;
 import co.edu.uniquindio.poo.model.TipoCaja;
 import co.edu.uniquindio.poo.model.Vehiculo;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.collections.ObservableList; //Listas dinámicas en la interfaz
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 
@@ -19,8 +19,8 @@ public class reservaController {
 
     //controlador que maneja las reservas de vehiculos en la aplicacion, maneja tambien el CRUD
 
-    private Empresa empresa;
-    private ObservableList<Reserva> reservas;
+    private Empresa empresa; //Contiene los datos de clientes,vehiculos y reservas
+    private ObservableList<Reserva> reservas; //lista observable de reservas que se actualizará en tiempo real en la interfaz cuando haya cambios
 
     public ObservableList<Reserva> getReservas() {
         return reservas;

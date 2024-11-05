@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo;
 
-import java.io.IOException;
+import java.io.IOException; //Manejar posibles errores de entrada/salida que pueden ocurrir al cargar la interfaz
 
 import co.edu.uniquindio.poo.controller.reservaController;
 import co.edu.uniquindio.poo.viewController.reservaViewController;
@@ -25,9 +25,9 @@ public class App extends Application {
             controller.setApp(this); // Inyecta la referencia de App en el controlador permitiendo el acceso
 
             primaryStage.setTitle("Sistema de Reservas");
-            primaryStage.setScene(scene);
+            primaryStage.setScene(scene); //contenido del archivo fxml cargado
             primaryStage.setResizable(false); // Para no permitir redimensionar la ventana
-            primaryStage.show();
+            primaryStage.show(); //mostrar la ventana principal de la aplicación 
         } catch (Exception e) {
             e.printStackTrace(); // Imprime el error en la consola
             System.err.println("Error al cargar la interfaz: " + e.getMessage());
